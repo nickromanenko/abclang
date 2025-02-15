@@ -11,7 +11,7 @@ export async function processNewBooking(transcript: string) {
         } else if (emailText.toLowerCase().includes('basic customer inquiry form')) {
             subject = 'CALL REQUEST ASAP';
         }
-        const to = 'nick+info@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
         await mailService.send(to, subject, text);
     } catch (error) {
@@ -56,7 +56,7 @@ export async function processExistingBooking(transcript: string) {
     try {
         const emailText = await processExistingBookingScript(transcript);
         const subject = 'ABCLANG BOT: Existing Booking';
-        const to = 'nick+info@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
 
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
         await mailService.send(to, subject, text);
@@ -79,7 +79,7 @@ export async function processGeneralEnquiry(transcript: string) {
     console.log('=> processGeneralEnquiry');
     try {
         const emailText = await processGeneralEnquiryScript(transcript);
-        const to = 'nick+info@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
 
         const subject = 'ABCLANG BOT: General Enquiry';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
@@ -104,7 +104,7 @@ export async function processSupplierAccounts(transcript: string) {
     console.log('=> processSupplierAccounts');
     try {
         const emailText = await processSupplierAccountsScript(transcript);
-        const to = 'nick+accounts@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
 
         const subject = 'ABCLANG BOT: Supplier Accounts';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
@@ -137,7 +137,7 @@ export async function processRecruitment(transcript: string) {
     console.log('=> processRecruitment');
     try {
         const emailText = await processRecruitmentScript(transcript);
-        const to = 'nick+recruitment@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
 
         const subject = 'ABCLANG BOT: Recruitment';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
@@ -166,7 +166,7 @@ export async function processVisitingOffice(transcript: string) {
     console.log('=> processVisitingOffice');
     try {
         const emailText = await processVisitingOfficeScript(transcript);
-        const to = 'nick+info@bosar.agency';
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
 
         const subject = 'ABCLANG BOT: Visiting Office';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
@@ -190,8 +190,7 @@ export async function processMarketing(transcript: string) {
     console.log('=> processMarketing');
     try {
         const emailText = await processMarketingScript(transcript);
-        const to = 'nick+marketing@bosar.agency';
-
+        const to = 'lgaowxceodkumzejfe@nbmbb.com';
         const subject = 'ABCLANG BOT: Marketing';
         const text = emailText.split('```').join('').split('\n').join('<br>').replace('plaintext', '');
 
