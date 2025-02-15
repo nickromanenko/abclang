@@ -1,16 +1,32 @@
-import { ServerClient } from 'postmark';
-const client = new ServerClient(process.env.POSTMARK_TOKEN as string);
-const From = `ABCLANG Support Bot<noreply@bosar.agency>`;
-
+import nodemailer from 'nodemailer';
+const { EMAIL, PASSWORD } = process.env;
+console.log(EMAIL, PASSWORD);
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: EMAIL,
+        pass: PASSWORD,
+    },
+});
+const from = `ABCLANG Support Bot<${EMAIL}>`;
 class MailService {
-    async send(to: string, subject: string, body: string) {
-        const response = await client.sendEmail({
-            From,
-            To: to,
-            Subject: subject,
-            TextBody: body,
+    async send(to: string, subject: string, text: string) {
+        return new Promise((resolve, reject) => {
+            const mailOptions = {
+                from,
+                to,
+                subject,
+                text,
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                    return resolve(null);
+                } else {
+                    return resolve(info);
+                }
+            });
         });
-        return response;
     }
 }
 export default new MailService();

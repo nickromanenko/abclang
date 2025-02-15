@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "tsx watch app/server.ts",
-        "deploy": "lambda-build upload abclang  -e app/lambda.ts -r eu-central-1"
+        "deploy": "lambda-build upload abc  -e app/lambda.ts -r eu-central-1"
     },
     "keywords": [],
     "author": "",
@@ -25,7 +25,6 @@
         "moment": "^2.30.1",
         "nodemailer": "^6.10.0",
         "openai": "^4.76.3",
-        "postmark": "^4.0.5",
         "source-map-support": "^0.5.21",
         "uuid": "^11.0.3"
     },
