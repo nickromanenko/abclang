@@ -29,6 +29,33 @@ router.post('/event', async (req: Request, res: Response) => {
     console.log('[🎭] Event:', req.body.event);
     console.log(JSON.stringify(req.body));
 
+    // if (req.body.event === 'call_analyzed') {
+    //     const call = req.body.call;
+    //     console.log('[📞] Call:', JSON.stringify(call));
+    //     const category = call?.call_analysis?.custom_analysis_data?.category || '';
+    //     console.log('[🗂️] Category:', category);
+    //     if (category === 'new_booking') {
+    //         await processNewBooking(call.transcript);
+    //     } else if (category === 'existing_project') {
+    //         await processExistingBooking(call.transcript);
+    //     } else if (category === 'general_enquiry') {
+    //         await processGeneralEnquiry(call.transcript);
+    //     } else if (category === 'supplier_accounts') {
+    //         await processSupplierAccounts(call.transcript);
+    //     } else if (category === 'recruitment') {
+    //         await processRecruitment(call.transcript);
+    //     } else if (category === 'visiting_office') {
+    //         await processVisitingOffice(call.transcript);
+    //     } else if (category === 'marketing') {
+    //         await processMarketing(call.transcript);
+    //     }
+    //     try {
+    //         // Update Report
+    //     } catch (error) {
+    //         console.error('ERROR:', error);
+    //     }
+    }
+
     return res.json({ success: true });
 });
 
