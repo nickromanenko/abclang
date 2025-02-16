@@ -27,6 +27,7 @@ router.post('/start', (req: Request, res: Response) => {
 });
 router.post('/event', async (req: Request, res: Response) => {
     console.log('[🎭] Event:', req.body.event);
+    console.log(JSON.stringify(req.body));
 
     return res.json({ success: true });
 });
