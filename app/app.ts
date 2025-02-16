@@ -2,6 +2,16 @@ import compression from 'compression';
 import cors from 'cors';
 import express, { Request, Response } from 'express';
 import moment from 'moment';
+// import {
+//     processExistingBooking,
+//     processGeneralEnquiry,
+//     processMarketing,
+//     processNewBooking,
+//     processRecruitment,
+//     processSupplierAccounts,
+//     processVisitingOffice,
+// } from './services/bot.service';
+// import { updateReport } from './services/report.service';
 
 const app = express();
 const router = express.Router();
@@ -51,6 +61,7 @@ router.post('/event', async (req: Request, res: Response) => {
     //     }
     //     try {
     //         // Update Report
+    //         await updateReport(call);
     //     } catch (error) {
     //         console.error('ERROR:', error);
     //     }

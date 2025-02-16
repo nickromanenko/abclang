@@ -16,7 +16,7 @@ class MailService {
                 from,
                 to,
                 subject,
-                text,
+                html: text,
             };
             transporter.sendMail(mailOptions, function (error, info) {
                 if (error) {
