@@ -54,7 +54,7 @@ router.post('/event', async (req: Request, res: Response) => {
     //     } catch (error) {
     //         console.error('ERROR:', error);
     //     }
-    }
+    // }
 
     return res.json({ success: true });
 });
